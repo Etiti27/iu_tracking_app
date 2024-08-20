@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Tracking App</string>
+    <string name="title">Tracking App</string>
+    <string name="history">History</string>
+    <string name="result">Results</string>
+    <string name="search_week">Search week</string>
+    <string name="welcome_text">Welcome to Tracking App</string>
+    <string name="Register">Register</string>
+    <string name="Login">Login</string>
+    <item name="email_hint" type="string">Enter Your e-mail</item>
+    <item name="name_hint" type="string">Enter Your name</item>
+    <item name="pass_hint" type="string">Enter Your secret password</item>
+    <item name="pass_hint2" type="string">verify your secret password</item>
+    <string name="no_account">Don\'t have account yet?  </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="yes_account">Already have an account?</string>
+    <string name="male">male</string>
+    <string name="female">female</string>
+    <string name="game_on">Game On!</string>
+    <string name="motivate">Journey of a Thousand mile starts from here</string>
+    <string name="kmText">Kilometres Covered This Week</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="kmhint">20.00</string>
+    <string name="km">Km</string>
+    <string name="thursday">Thursday</string>
+    <string name="calculate">Calculate Eligibility</string>
+</resources>

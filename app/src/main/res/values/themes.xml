@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TrackingApp" parent="Theme.Material3.Light">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/sky_blue</item>
+        <item name="titleTextColor">@android:color/white</item>
+    </style>
+
+    <style name="Theme.TrackingApp" parent="Base.Theme.TrackingApp" />
+</resources>
