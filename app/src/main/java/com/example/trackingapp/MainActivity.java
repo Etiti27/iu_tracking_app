@@ -17,16 +17,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
     ActionBar actionBar;
+    FirebaseAuth auth;
     Fragment fragment;
     Button loginBtn, RegisterBtn, gotoSexSelectionBtn;
-    Intent gotoSexSelectionIntent;
+    Intent gotoCalculation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        firebaseAuth instance
+        auth= FirebaseAuth.getInstance();
+
+//        AppBar menu
         actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setTitle(R.string.title);
@@ -34,25 +42,13 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setLogo(R.mipmap.cantje_logo);
             actionBar.setDisplayUseLogoEnabled(true);
 //            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.sky_blue)));
+            actionBar.setBackgroundDrawable(new ColorDrawable(getResources()
+                    .getColor(R.color.sky_blue)));
         }
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater= getMenuInflater();
-        menuInflater.inflate(R.menu.home_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==R.id.history){
-            Toast.makeText(this, "History is clicked", Toast.LENGTH_SHORT).show();
-        }
-        if(item.getItemId()==R.id.search){
-            Toast.makeText(this,  "search is clicked", Toast.LENGTH_SHORT).show();
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    add menu to appbar
+
+//    switching login and registration fragments
     public void switchFragments(View view){
         loginBtn= findViewById(R.id.loginBtn);
         RegisterBtn=findViewById(R.id.RegisterBtn);
@@ -68,4 +64,22 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+//    For good user experience,
+//    detect if a users has logged in not longer again
+//    if true, use the previous sessioon
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser= auth.getCurrentUser();
+                if(currentUser !=null){
+                    Toast.makeText(this, "user exist", Toast.LENGTH_SHORT).show();
+                    gotoCalculation = new Intent(this, kilometerCover.class);
+                    startActivity(gotoCalculation);
+                    finish();
+                }else{
+                    Toast.makeText(this, "no user", Toast.LENGTH_SHORT).show();
+                }
+
+        ;
+    }
 }

@@ -30,4 +30,6 @@
     <string name="congratulationsText1">CONGRATULATIONS!!!</string>
     <string name="congratstext2">You have achieved all the necessary criteria for selection, Enjoy the game on Sunday</string>
     <string name="logout">Logout</string>
+    <string name="failuretext1">WHAT A SHAME!!</string>
+    <string name="failure_advice">You have NOT achieved the necessary criteria for selection. We go try again next week</string>
 </resources>
