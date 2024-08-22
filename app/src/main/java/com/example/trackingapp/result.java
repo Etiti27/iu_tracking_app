@@ -58,7 +58,7 @@ private void StatusCheck(){
             imageView = findViewById(R.id.imageView);
             imageView.setImageResource(R.mipmap.maguire);
             congratText.setText(R.string.failuretext1);
-            congratText2.setText(R.string.failure_advice);
+            congratText2.setText("You have NOT achieved the necessary criteria for selection. We go try again next week");
 
         }
 
